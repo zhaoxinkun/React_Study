@@ -18,8 +18,10 @@
     class App extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {name: "akin"}
         }
+
+        // state的简写形式
+        state = {name: "akin"}
 
         render() {
             const {name} = this.state
@@ -35,20 +37,7 @@
         demo = () => {
             console.log("haha")
             console.log(this.state.name)  //使用bind才可以访问this.state 不然类方法内部,自动的局部严格模式
-
-            // setState使用方式一,对象形式-合并更新
-            // this.setState({name: "akin2"})
-
-            // setState使用方式二,函数形式-依赖上一次的state
-            // this.setState((prevState, props) => ({
-            //     name: prevState.name + "akin2",
-            // }))
-
-            // setState使用方式三,对象+回掉函数形式-修改完后执行操作
-            this.setState({name: "akin2"}, () => {
-                console.log("state is update!!")
-            })
-
+            this.setState({name: "akin2"})
         }
     }
 
