@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/7.24.7/babel.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/react/18.1.0/umd/react.development.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/react-dom/18.1.0/umd/react-dom.development.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+    // 类式组件
+    class App extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        state = {about: null}
+
+        render() {
+            const {about} = this.state
+            return (
+                <>
+                    <h1>批量传递props</h1>
+                    <button onClick={this.demo}>点击</button>
+                    {/*渲染props的数据*/}
+                    {about && (
+                        <>
+                            <li>{about.name}</li>
+                            <li>{about.age}</li>
+                            <li>{about.sex}</li>
+                        </>
+                    )}
+                </>
+            )
+        }
+
+        // 箭头函数方式拿到this
+        demo = () => {
+            // 使用props
+            this.setState({about: {...PropsObj}})
+        }
+    }
+
+    const PropsObj = {
+        name: "PropsAkin",
+        age: 18,
+        sex: 1
+    }
+
+    // 组件标签处批量传递props
+    ReactDOM.createRoot(document.getElementById('root')).render(<App {...PropsObj} />)
+</script>
+
+</body>
+</html>
