@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    第一步,引入React-->
+    <script src="https://cdn.jsdelivr.net/npm/react@16.8.0/umd/react.development.js"></script>
+    <!--    第二步,引入react-dom 用于支持react操作DOM-->
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@16.8.0/umd/react-dom.production.min.js"></script>
+    <!--    第三步,引入babel 用于将jsx转为js-->
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/javascript">
+
+    // 1. 创建一个类
+    class Person {
+        // 2. 构造器方法,用于执行初始化操作,this是该类的实例对象
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        // 3. 一般方法
+
+    }
+
+    // 实例化对象
+    const p1 = new Person("tom", 22)
+    const p2 = new Person("Jerry", 22)
+
+</script>
+</body>
+</html>

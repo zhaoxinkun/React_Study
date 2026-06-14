@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    第一步,引入React-->
+    <script src="https://cdn.jsdelivr.net/npm/react@16.8.0/umd/react.development.js"></script>
+    <!--    第二步,引入react-dom 用于支持react操作DOM-->
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@16.8.0/umd/react-dom.production.min.js"></script>
+    <!--    第三步,引入babel 用于将jsx转为js-->
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<!--第四步,创建DOM元素-->
+<div id="root"></div>
+
+<script type="text/javascript">
+
+    // 第五步,使用JS方式 参数详解（标签名，标签属性（对象），标签内容）
+    const VDOM = React.createElement("h1", {id: "title"}, "Hello React")
+
+    // 暴露问题:需求增加，多一个span，不会生效的，需要多层嵌套React.createElement
+    // 第六步,渲染虚拟DOM到页面
+    ReactDOM.render(VDOM, document.getElementById('root'))
+</script>
+</body>
+</html>

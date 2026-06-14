@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    第一步,引入React-->
+    <script src="https://cdn.jsdelivr.net/npm/react@16.8.0/umd/react.development.js"></script>
+    <!--    第二步,引入react-dom 用于支持react操作DOM-->
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@16.8.0/umd/react-dom.production.min.js"></script>
+    <!--    第三步,引入babel 用于将jsx转为js-->
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+
+    // 创建函数式组件,必须大写，不然就是解析为HTML标签，而且还找不到，报错
+    function Demo() {
+        return (
+            <div>
+                Hello react
+            </div>
+        )
+    }
+
+    ReactDOM.render(<Demo/>, document.getElementById('root'))
+</script>
+</body>
+</html>
