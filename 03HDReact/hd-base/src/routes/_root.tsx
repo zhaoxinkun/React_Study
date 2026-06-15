@@ -1,16 +1,11 @@
-import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import { createRootRoute, createRoute, createRouter } from '@tanstack/react-router'
 import Home from '@/pages/home.tsx'
 import About from '@/pages/about.tsx'
+import App from '@/App.tsx'
 
 // 1. 创建root根路由
 export const rootRoute = createRootRoute({
-  component: () => (
-    <>
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
-  ),
+  component: App,
 })
 
 // 2. 创建home路由
