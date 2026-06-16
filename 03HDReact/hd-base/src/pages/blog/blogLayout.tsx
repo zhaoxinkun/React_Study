@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Link, Outlet } from '@tanstack/react-router'
+import classNames from 'classnames'
 
 export function BlogLayout() {
   return (
@@ -58,7 +59,8 @@ interface Props {
 
 function HoudunrenPage({ className, title, content, view }: Props) {
   return (
-    <Card className={className}>
+    // 计算classname
+    <Card className={classNames(className, 'bg-amber-500')}>
       <CardHeader>
         <h2> {title}</h2>
       </CardHeader>
