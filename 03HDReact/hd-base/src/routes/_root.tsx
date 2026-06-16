@@ -2,6 +2,9 @@ import { createRootRoute, createRoute, createRouter } from '@tanstack/react-rout
 import Home from '@/pages/home.tsx'
 import About from '@/pages/about.tsx'
 import App from '@/App.tsx'
+import userRoute from '@/routes/user.ts'
+import blogRoute from '@/routes/blog.ts'
+import { FrontLayout } from '@/layout/frontLayout.tsx'
 
 // 1. 创建root根路由
 export const rootRoute = createRootRoute({
@@ -15,17 +18,26 @@ const homeRoute = createRoute({
   // 描述路径
   path: '/',
   // 描述组件
-  component: Home,
+  component: () => (
+    <FrontLayout>
+      <Home />
+    </FrontLayout>
+  ),
 })
 
+// 创建关于页面的路由
 const aboutRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/about',
-  component: About,
+  component: () => (
+    <FrontLayout>
+      <About />
+    </FrontLayout>
+  ),
 })
 
 // 3. 组装路由树
-const routeTree = rootRoute.addChildren([homeRoute, aboutRoute])
+const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, blogRoute, userRoute])
 
 // 4. 创建路由
 export const router = createRouter({
