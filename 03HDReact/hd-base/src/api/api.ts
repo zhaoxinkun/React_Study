@@ -1,5 +1,5 @@
-import request from '@/api/request.ts'
+import request from '@/api/axios.ts'
 
 export function getUsers() {
-  return request.get('/posts')
+  return request.get('/postss')
 }

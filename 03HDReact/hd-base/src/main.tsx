@@ -6,7 +6,13 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { router } from '@/routes/_root.tsx'
 // 使用tanstack query
 import { QueryClient } from '@tanstack/react-query'
-export const queryClient = new QueryClient()
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 3,
+    },
+  },
+})
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
