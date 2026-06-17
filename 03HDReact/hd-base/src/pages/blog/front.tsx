@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import classNames from 'classnames'
+import { UserAvatar } from '@/components/Avatar.tsx'
 
 export function Front() {
   return (
@@ -49,6 +50,7 @@ function HoudunrenPage({ className, title, content, view }: Props) {
   return (
     // 计算classname
     <Card className={classNames(className, 'bg-amber-500')}>
+      <UserAvatar seed={title} />
       <CardHeader>
         <h2> {title}</h2>
       </CardHeader>
