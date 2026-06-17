@@ -7,7 +7,6 @@ export default function App() {
       <main>
         <Outlet />
       </main>
-
       <TanStackRouterDevtools />
     </>
   )

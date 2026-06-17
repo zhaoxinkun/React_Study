@@ -1,14 +1,48 @@
 {
-  "$schema": "./node_modules/json-server/schema.json",
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "eC45YXTuaOQ"
+    },
+    {
+      "id": "5_D0azMuy5c"
+    },
+    {
+      "id": "Lb_7wg3s7EA"
+    },
+    {
+      "id": "3Q8cHoUhImY"
+    },
+    {
+      "id": "Z0ZpNqw0rxw"
+    },
+    {
+      "id": "5ke87vaBqUA"
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "$schema": "./node_modules/json-server/schema.json"
 }
