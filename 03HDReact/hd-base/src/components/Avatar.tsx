@@ -8,6 +8,7 @@ interface UserAvatarProps {
   seed: string
 }
 
+// 随机头像组件
 export function UserAvatar({ seed }: UserAvatarProps) {
   const avatar = useMemo(() => {
     return new Avatar(style, {

@@ -25,7 +25,7 @@ const homeRoute = createRoute({
   ),
 })
 
-// 创建关于页面的路由
+// 创建about的路由
 const aboutRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/about',

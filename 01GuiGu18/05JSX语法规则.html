@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>JSX语法规范</title>
     <!--    第一步,引入React-->
     <script src="https://cdn.jsdelivr.net/npm/react@16.8.0/umd/react.development.js"></script>
     <!--    第二步,引入react-dom 用于支持react操作DOM-->
-    <script src="https://cdn.jsdelivr.net/npm/react-dom@16.8.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@16.8.0/umd/react-dom.development.js"></script>
     <!--    第三步,引入babel 用于将jsx转为js-->
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.24.7/babel.min.js"></script>
     <style>
         .app {
             background-color: red;
         }
     </style>
 </head>
+
 <body>
+<!--创建容器-->
 <div id="root"></div>
 
 <script type="text/babel">
     const myid = "akin"
 
-    const VDOM = (  //1. 创建虚拟DOM不可以使用引号
-        //2. 根标签只能有一个且闭合
+    const VDOM = (  //1. 定义虚拟DOM不可以使用引号
+        //2. 根标签只能有一个且闭合,也可以使用<></>标签标记有一下
         <div>
-            {/*3. 使用表达式必须使用{}包裹*/}
+            {/*3. 混入JS表达式必须使用{}包裹*/}
             {/*4. 使用class 必须为 className*/}
             <h1 className="app">hello react,{myid}</h1>
             {/*5. style必须使用{{}}形式,且为驼峰写法*/}
             <div style={{color: "red"}}>你好</div>
         </div>
     )
-
     ReactDOM.render(VDOM, document.getElementById('root'))
 </script>
 </body>

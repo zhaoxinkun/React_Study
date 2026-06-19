@@ -1,14 +1,14 @@
 import { useQuery } from '@tanstack/react-query'
-import { getUsers } from '@/api/api.ts'
 import { TriangleAlert } from 'lucide-react'
-import type { Post } from 'src/types/post.ts'
 import { ErrorCom } from '@/error/ErrorCom'
 import type { AxiosError } from 'axios'
+import { getUser } from '@/api/user.ts'
+import type { User } from '@/types/user.ts'
 
 export function Profile() {
-  const { isPending, error, data } = useQuery<Post[], AxiosError>({
+  const { isPending, error, data } = useQuery<User[], AxiosError>({
     queryKey: ['users'],
-    queryFn: () => getUsers().then(res => res.data),
+    queryFn: getUser,
   })
 
   if (isPending) return 'Loading...'
@@ -18,9 +18,11 @@ export function Profile() {
     <>
       this is profile
       <TriangleAlert />
-      {data?.map((item, index) => {
-        return <li key={index}>{item.id}</li>
-      })}
+      {data?.map(item => (
+        <ul>
+          <li key={item.id}>{item.id}</li>
+        </ul>
+      ))}
     </>
   )
 }

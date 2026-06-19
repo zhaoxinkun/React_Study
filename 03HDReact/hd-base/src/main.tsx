@@ -4,8 +4,10 @@ import '@/assets/tailwind.css'
 import { RouterProvider } from '@tanstack/react-router'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { router } from '@/routes/_root.tsx'
+
 // 使用tanstack query
 import { QueryClient } from '@tanstack/react-query'
+// 创建实例配置
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

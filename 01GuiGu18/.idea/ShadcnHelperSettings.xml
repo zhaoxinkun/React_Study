@@ -313,13 +313,13 @@
         <option name="id" value="central-beui" />
         <option name="name" value="Beui" />
         <option name="namespace" value="@beui" />
-        <option name="baseUrl" value="https://beui.saura3h.xyz/r" />
+        <option name="baseUrl" value="https://beui.dev/r" />
         <option name="stylePath" value="/{name}.json" />
         <option name="type" value="community" />
         <option name="enabled" value="false" />
         <option name="description" value="Bespoke motion components for React. Copy-paste components with shadcn-compatible installs, Tailwind CSS v4, and Motion." />
-        <option name="homepage" value="https://beui.saura3h.xyz" />
-        <option name="urlTemplate" value="https://beui.saura3h.xyz/r/{name}.json" />
+        <option name="homepage" value="https://beui.dev" />
+        <option name="urlTemplate" value="https://beui.dev/r/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
         <option name="id" value="central-billingsdk" />
@@ -464,6 +464,18 @@
         <option name="description" value="Beautiful, interactive React + Tailwind components for modern product UIs." />
         <option name="homepage" value="https://componentry.fun" />
         <option name="urlTemplate" value="https://componentry.fun/r/{name}.json" />
+      </RegistryConfigState>
+      <RegistryConfigState>
+        <option name="id" value="central-contentbit" />
+        <option name="name" value="Contentbit" />
+        <option name="namespace" value="@contentbit" />
+        <option name="baseUrl" value="https://contentbit.dev/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="React components that render Content Blocks: plain Markdown with schema-validated directive blocks. Built for content written by humans, CMSes, and LLMs." />
+        <option name="homepage" value="https://contentbit.dev" />
+        <option name="urlTemplate" value="https://contentbit.dev/r/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
         <option name="id" value="central-corr" />
@@ -1903,6 +1915,18 @@
         <option name="urlTemplate" value="https://shadcnstudio.com/r/{style}/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
+        <option name="id" value="central-shadcn-ui-blocks" />
+        <option name="name" value="Shadcn-ui-blocks" />
+        <option name="namespace" value="@shadcn-ui-blocks" />
+        <option name="baseUrl" value="https://www.shadcn-ui-blocks.com/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="Shadcn blocks across standard collections and handcrafted premium collections, plus a beautiful templates. Start free, then unlock more with Pro." />
+        <option name="homepage" value="https://www.shadcn-ui-blocks.com" />
+        <option name="urlTemplate" value="https://www.shadcn-ui-blocks.com/r/{name}.json" />
+      </RegistryConfigState>
+      <RegistryConfigState>
         <option name="id" value="central-shadcnblocks" />
         <option name="name" value="Shadcnblocks" />
         <option name="namespace" value="@shadcnblocks" />
@@ -2455,6 +2479,18 @@
         <option name="urlTemplate" value="https://uselayouts.com/r/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
+        <option name="id" value="central-uui" />
+        <option name="name" value="Uui" />
+        <option name="namespace" value="@uui" />
+        <option name="baseUrl" value="https://uui.app/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="Inspiration for UI Interfaces. Discover UI ideas, micro-interactions, and components drawn from real products." />
+        <option name="homepage" value="https://uui.app" />
+        <option name="urlTemplate" value="https://uui.app/r/{name}.json" />
+      </RegistryConfigState>
+      <RegistryConfigState>
         <option name="id" value="central-utilcn" />
         <option name="name" value="Utilcn" />
         <option name="namespace" value="@utilcn" />
@@ -2539,6 +2575,18 @@
         <option name="urlTemplate" value="https://wigggle-ui.vercel.app/r/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
+        <option name="id" value="central-heatmap" />
+        <option name="name" value="Heatmap" />
+        <option name="namespace" value="@heatmap" />
+        <option name="baseUrl" value="https://shadcn-heatmap.pages.dev/r" />
+        <option name="stylePath" value="/{name}.json" />
+        <option name="type" value="community" />
+        <option name="enabled" value="false" />
+        <option name="description" value="Beautiful, accessible heatmap components for React: GitHub-style calendar, weekday x hour matrix, date x hour, and status timeline. Built with shadcn/ui conventions." />
+        <option name="homepage" value="https://shadcn-heatmap.pages.dev" />
+        <option name="urlTemplate" value="https://shadcn-heatmap.pages.dev/r/{name}.json" />
+      </RegistryConfigState>
+      <RegistryConfigState>
         <option name="id" value="central-xcn" />
         <option name="name" value="Xcn" />
         <option name="namespace" value="@xcn" />
@@ -2563,126 +2611,6 @@
         <option name="urlTemplate" value="https://saaskit-theta.vercel.app/r/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
-        <option name="id" value="central-dotmatrix" />
-        <option name="name" value="Dotmatrix" />
-        <option name="namespace" value="@dotmatrix" />
-        <option name="baseUrl" value="https://dotmatrix.zzzzshawn.cloud/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Production-ready dot-matrix loading components for React, featuring square, circular, and triangle animations with polished motion." />
-        <option name="homepage" value="https://dotmatrix.zzzzshawn.cloud" />
-        <option name="urlTemplate" value="https://dotmatrix.zzzzshawn.cloud/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-delta" />
-        <option name="name" value="Delta" />
-        <option name="namespace" value="@delta" />
-        <option name="baseUrl" value="https://deltacomponents.dev/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="A shadcn registry for AI and media-rich interfaces — streaming LLM chat, zoomable images, swipeable card decks, interactive maps, plus dashboard and landing-page blocks." />
-        <option name="homepage" value="https://deltacomponents.dev" />
-        <option name="urlTemplate" value="https://deltacomponents.dev/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-shieldcn" />
-        <option name="name" value="Shieldcn" />
-        <option name="namespace" value="@shieldcn" />
-        <option name="baseUrl" value="https://shieldcn.dev/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Beautiful README badges as a service. A shields.io alternative with the visual quality of shadcn/ui. Drop-in SVG badge components for npm, GitHub, Discord, and more." />
-        <option name="homepage" value="https://shieldcn.dev" />
-        <option name="urlTemplate" value="https://shieldcn.dev/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-evilbuttons" />
-        <option name="name" value="Evilbuttons" />
-        <option name="namespace" value="@evilbuttons" />
-        <option name="baseUrl" value="https://evilbuttons.radiumcoders.com/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="A shadcn/ui registry featuring a collection of animated buttons built with Motion. Each component is designed to add punchy, interactive feedback to your UI with minimal setup." />
-        <option name="homepage" value="https://evilbuttons.radiumcoders.com/docs" />
-        <option name="urlTemplate" value="https://evilbuttons.radiumcoders.com/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-stepper" />
-        <option name="name" value="Stepper" />
-        <option name="namespace" value="@stepper" />
-        <option name="baseUrl" value="https://francozeta-stepper.vercel.app" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="A modern, accessible and composable Stepper component for React and Tailwind CSS. Built for shadcn/ui-style workflows with registry-first distribution." />
-        <option name="homepage" value="https://francozeta-stepper.vercel.app" />
-        <option name="urlTemplate" value="https://francozeta-stepper.vercel.app/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-text-ui" />
-        <option name="name" value="Text-ui" />
-        <option name="namespace" value="@text-ui" />
-        <option name="baseUrl" value="https://joelachance.github.io/text-ui/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="A shadcn/ui registry with EchoText (`echo-text`): layered stroke text that follows the pointer—minimal setup, drop-in component." />
-        <option name="homepage" value="https://joelachance.github.io/text-ui/docs" />
-        <option name="urlTemplate" value="https://joelachance.github.io/text-ui/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-framecn" />
-        <option name="name" value="Framecn" />
-        <option name="namespace" value="@framecn" />
-        <option name="baseUrl" value="https://framecn.vercel.app/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Beautiful videos, made simple. Ready to use, customizable video components for React." />
-        <option name="homepage" value="https://framecn.vercel.app" />
-        <option name="urlTemplate" value="https://framecn.vercel.app/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-turbopills-ui" />
-        <option name="name" value="Turbopills-ui" />
-        <option name="namespace" value="@turbopills-ui" />
-        <option name="baseUrl" value="https://ui.turbopills.com/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Beautiful, accessible, and customizable React components for your telehealth applications." />
-        <option name="homepage" value="https://www.turbopills.com/ui/docs" />
-        <option name="urlTemplate" value="https://ui.turbopills.com/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-nexus-labs" />
-        <option name="name" value="Nexus-labs" />
-        <option name="namespace" value="@nexus-labs" />
-        <option name="baseUrl" value="https://nexus-ui.com/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Motion-native animated components for Next.js — backgrounds, heroes, inputs, carousels, and more. Open source. Copy-ready TypeScript." />
-        <option name="homepage" value="https://nexus-ui.com" />
-        <option name="urlTemplate" value="https://nexus-ui.com/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-wensity" />
-        <option name="name" value="Wensity" />
-        <option name="namespace" value="@wensity" />
-        <option name="baseUrl" value="https://raw.githubusercontent.com/ksparth12/wensity-shadcn-registry/main" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Motion-rich React components for AI interfaces, SaaS blocks, and cinematic interactions. Free Wensity components only." />
-        <option name="homepage" value="https://wensity.com" />
-        <option name="urlTemplate" value="https://raw.githubusercontent.com/ksparth12/wensity-shadcn-registry/main/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
         <option name="id" value="central-zippystarter" />
         <option name="name" value="Zippystarter" />
         <option name="namespace" value="@zippystarter" />
@@ -2695,18 +2623,6 @@
         <option name="urlTemplate" value="https://zippystarter.com/r/{name}.json" />
       </RegistryConfigState>
       <RegistryConfigState>
-        <option name="id" value="central-contentbit" />
-        <option name="name" value="Contentbit" />
-        <option name="namespace" value="@contentbit" />
-        <option name="baseUrl" value="https://contentbit.dev/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="React components that render Content Blocks: plain Markdown with schema-validated directive blocks. Built for content written by humans, CMSes, and LLMs." />
-        <option name="homepage" value="https://contentbit.dev" />
-        <option name="urlTemplate" value="https://contentbit.dev/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
         <option name="id" value="central-kaui" />
         <option name="name" value="Kaui" />
         <option name="namespace" value="@kaui" />
@@ -2717,42 +2633,6 @@
         <option name="description" value="Personal well crafted components for Shadcn ui" />
         <option name="homepage" value="https://kaui-shadcn-registry.vercel.app" />
         <option name="urlTemplate" value="https://kaui-shadcn-registry.vercel.app/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-shadcn-ui-blocks" />
-        <option name="name" value="Shadcn-ui-blocks" />
-        <option name="namespace" value="@shadcn-ui-blocks" />
-        <option name="baseUrl" value="https://www.shadcn-ui-blocks.com/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Shadcn blocks across standard collections and handcrafted premium collections, plus a beautiful templates. Start free, then unlock more with Pro." />
-        <option name="homepage" value="https://www.shadcn-ui-blocks.com" />
-        <option name="urlTemplate" value="https://www.shadcn-ui-blocks.com/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-uui" />
-        <option name="name" value="Uui" />
-        <option name="namespace" value="@uui" />
-        <option name="baseUrl" value="https://uui.app/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Inspiration for UI Interfaces. Discover UI ideas, micro-interactions, and components drawn from real products." />
-        <option name="homepage" value="https://uui.app" />
-        <option name="urlTemplate" value="https://uui.app/r/{name}.json" />
-      </RegistryConfigState>
-      <RegistryConfigState>
-        <option name="id" value="central-heatmap" />
-        <option name="name" value="Heatmap" />
-        <option name="namespace" value="@heatmap" />
-        <option name="baseUrl" value="https://shadcn-heatmap.pages.dev/r" />
-        <option name="stylePath" value="/{name}.json" />
-        <option name="type" value="community" />
-        <option name="enabled" value="false" />
-        <option name="description" value="Beautiful, accessible heatmap components for React: GitHub-style calendar, weekday x hour matrix, date x hour, and status timeline. Built with shadcn/ui conventions." />
-        <option name="homepage" value="https://shadcn-heatmap.pages.dev" />
-        <option name="urlTemplate" value="https://shadcn-heatmap.pages.dev/r/{name}.json" />
       </RegistryConfigState>
     </registryConfigs>
   </component>

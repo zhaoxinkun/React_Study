@@ -8,7 +8,6 @@ export function BlogLayout() {
           <Link to="/" className="text-primary flex items-center gap-1">
             <span className="uppercase">houdunren.com</span>
           </Link>
-          <Link to="/blog/front">我的博客</Link>
           <Link to="/blog/feature">React特性</Link>
           <Link to="/blog/live">晚八点直播</Link>
         </div>

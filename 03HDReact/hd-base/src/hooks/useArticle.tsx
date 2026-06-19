@@ -1,0 +1,11 @@
+import { useQuery } from '@tanstack/react-query'
+import { getArticle } from '../api/article.ts'
+import type { Article } from '@/types/article.ts'
+import type { AxiosError } from 'axios'
+
+export function useArticle() {
+  return useQuery<Article[], AxiosError>({
+    queryKey: ['article'],
+    queryFn: () => getArticle().then(res => res.data),
+  })
+}
