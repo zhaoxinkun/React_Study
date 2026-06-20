@@ -4,14 +4,16 @@
  */
 import { articleDetailRoute } from '@/routes/blog/blog.tsx'
 import { useGetArticleDetail } from '@/hooks/useGetArticleDetail.tsx'
+import { Loading } from '@/components/loading.tsx'
+import { ErrorCom } from '@/error/ErrorCom'
 
 export default function ArticleDetail() {
   const { id } = articleDetailRoute.useParams()
 
   const { data, isLoading, error } = useGetArticleDetail(id)
 
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>{error.message}</div>
+  if (isLoading) return <Loading />
+  if (error) return <ErrorCom error={error} />
 
   return (
     <>

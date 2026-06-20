@@ -22,6 +22,7 @@ export function updateArticle(id: string, data: UpdateArticleDto) {
   return request.patch<Article>(`/article/${id}`, data)
 }
 
+// 删除文档
 export function deleteArticle(id: string) {
-  return request.delete<void>(`/article/${id}`)
+  return request.delete<Article>(`/article/${id}`)
 }

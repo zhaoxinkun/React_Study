@@ -26,6 +26,9 @@ export const articleDetailRoute = createRoute({
   getParentRoute: () => blogRootRoute,
   path: 'article/$id',
   component: ArticleDetail,
+  notFoundComponent: () => {
+    return <h1>notFound</h1>
+  },
 })
 
 // 特性路由
