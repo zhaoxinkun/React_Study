@@ -26,7 +26,6 @@
     "antd": "^6.4.4",
     "axios": "^1.18.0",
     "class-variance-authority": "^0.7.1",
-    "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "json-server": "1.0.0-beta.15",
     "lucide-react": "^1.18.0",

@@ -3,8 +3,9 @@ import { createRoute } from '@tanstack/react-router'
 import rootRoute from '@/routes/_root.tsx'
 import { BlogLayout } from '@/pages/blog/blogLayout.tsx'
 import { Feature } from '@/pages/blog/feature.tsx'
-import { Article } from '@/pages/blog/article.tsx'
 import { Live } from '@/pages/blog/live.tsx'
+import ArticleDetail from '@/pages/blog/articleDetail.tsx'
+import BlogHome from '@/pages/blog/blogHome.tsx'
 
 // 创建blog路由
 const blogRootRoute = createRoute({
@@ -13,28 +14,38 @@ const blogRootRoute = createRoute({
   component: BlogLayout,
 })
 
-// 配置front为blog的首页
+// 配置article 为blog的首页
 const IndexRoute = createRoute({
   getParentRoute: () => blogRootRoute,
   path: '/',
-  component: Article,
+  component: BlogHome,
 })
 
+// 定义article的动态路由
+export const articleDetailRoute = createRoute({
+  getParentRoute: () => blogRootRoute,
+  path: 'article/$id',
+  component: ArticleDetail,
+})
+
+// 特性路由
 const featureRoute = createRoute({
   getParentRoute: () => blogRootRoute,
   path: 'feature',
   component: Feature,
 })
-// const frontRoute = createRoute({
-//   getParentRoute: () => blogRootRoute,
-//   path: 'front',
-//   component: Article,
-// })
+
+// 直播路由
 const liveRoute = createRoute({
   getParentRoute: () => blogRootRoute,
   path: 'live',
   component: Live,
 })
 
-const blogRoute = blogRootRoute.addChildren([featureRoute, IndexRoute, liveRoute])
+const blogRoute = blogRootRoute.addChildren([
+  featureRoute,
+  articleDetailRoute,
+  IndexRoute,
+  liveRoute,
+])
 export default blogRoute

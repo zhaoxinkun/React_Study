@@ -3,7 +3,7 @@ import { getArticle } from '@/api/article.ts'
 import type { Article } from '@/types/article.ts'
 import type { AxiosError } from 'axios'
 
-export function useArticle() {
+export function useArticles() {
   return useQuery<Article[], AxiosError>({
     queryKey: ['article'],
     queryFn: getArticle,
