@@ -2,8 +2,15 @@
 import request from '@/api/axios'
 import type { Article, CreateArticleDto, UpdateArticleDto } from '@/types/article'
 
-export async function getArticle() {
+// 获取Article列表
+export async function getArticleList() {
   const { data } = await request.get<Article[]>('/article')
+  return data
+}
+
+// 获取Article详情
+export async function getArticleDetail(id: string) {
+  const { data } = await request.get<Article>(`/article/${id}`)
   return data
 }
 

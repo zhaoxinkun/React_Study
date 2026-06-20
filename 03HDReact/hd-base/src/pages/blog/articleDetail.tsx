@@ -3,8 +3,21 @@
  *
  */
 import { articleDetailRoute } from '@/routes/blog/blog.tsx'
+import { useGetArticleDetail } from '@/hooks/useGetArticleDetail.tsx'
 
-export default function articleDetail() {
+export default function ArticleDetail() {
   const { id } = articleDetailRoute.useParams()
-  return <h1>hello{id}</h1>
+
+  const { data, isLoading, error } = useGetArticleDetail(id)
+
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>{error.message}</div>
+
+  return (
+    <>
+      <h1>{data?.title}</h1>
+      <p>{data?.content}</p>
+      <p>{data?.preview}</p>
+    </>
+  )
 }

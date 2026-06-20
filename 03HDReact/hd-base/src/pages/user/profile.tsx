@@ -1,15 +1,9 @@
-import { useQuery } from '@tanstack/react-query'
 import { TriangleAlert } from 'lucide-react'
 import { ErrorCom } from '@/error/ErrorCom'
-import type { AxiosError } from 'axios'
-import { getUser } from '@/api/user.ts'
-import type { User } from '@/types/user.ts'
+import { useUsers } from '@/hooks/useUsers.tsx'
 
 export function Profile() {
-  const { isPending, error, data } = useQuery<User[], AxiosError>({
-    queryKey: ['users'],
-    queryFn: getUser,
-  })
+  const { isPending, error, data } = useUsers()
 
   if (isPending) return 'Loading...'
 

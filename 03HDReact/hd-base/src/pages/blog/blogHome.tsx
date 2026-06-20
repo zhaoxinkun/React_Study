@@ -3,13 +3,13 @@
  *
  */
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { useArticles } from '@/hooks/useArticles.tsx'
+import { useGetArticleList } from '../../hooks/useGetArticleList.tsx'
 import { ErrorCom } from '@/error/ErrorCom.tsx'
 import ArticleCard from '@/pages/blog/articleCard.tsx'
 import { Link } from '@tanstack/react-router'
 
 export default function BlogHome() {
-  const { isLoading, error, data } = useArticles()
+  const { isLoading, error, data } = useGetArticleList()
   if (isLoading) return 'loading...'
   if (error) return <ErrorCom error={error} />
   return (
