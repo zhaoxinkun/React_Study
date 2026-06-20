@@ -1,15 +1,27 @@
 import { NavBar } from '@/components/navBar'
-import type { FC, ReactNode } from 'react'
+import { Outlet } from '@tanstack/react-router'
 
-interface FrontLayoutProps {
-  children: ReactNode
-}
+// interface FrontLayoutProps {
+//   children: ReactNode
+// }
 
-export const FrontLayout: FC<FrontLayoutProps> = ({ children }) => {
+// export const FrontLayout: FC<FrontLayoutProps> = ({ children }) => {
+//   return (
+//     <>
+//       <NavBar />
+//       {children}
+//     </>
+//   )
+// }
+export const FrontLayout = () => {
   return (
     <>
-      <NavBar />
-      {children}
+      <header>
+        <NavBar />
+      </header>
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }

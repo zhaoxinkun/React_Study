@@ -1,9 +1,9 @@
 // 创建博客页面路由
 import { createRoute } from '@tanstack/react-router'
-import { rootRoute } from '@/routes/_root.tsx'
+import rootRoute from '@/routes/_root.tsx'
 import { BlogLayout } from '@/pages/blog/blogLayout.tsx'
 import { Feature } from '@/pages/blog/feature.tsx'
-import { Front } from '@/pages/blog/front.tsx'
+import { Article } from '@/pages/blog/article.tsx'
 import { Live } from '@/pages/blog/live.tsx'
 
 // 创建blog路由
@@ -17,7 +17,7 @@ const blogRootRoute = createRoute({
 const IndexRoute = createRoute({
   getParentRoute: () => blogRootRoute,
   path: '/',
-  component: Front,
+  component: Article,
 })
 
 const featureRoute = createRoute({
@@ -28,7 +28,7 @@ const featureRoute = createRoute({
 // const frontRoute = createRoute({
 //   getParentRoute: () => blogRootRoute,
 //   path: 'front',
-//   component: Front,
+//   component: Article,
 // })
 const liveRoute = createRoute({
   getParentRoute: () => blogRootRoute,

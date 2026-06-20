@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router'
-import { rootRoute } from '@/routes/_root.tsx'
+import rootRoute from '@/routes/_root.tsx'
 import { UserLayout } from '@/pages/user/userLayout.tsx'
 import { Profile } from '@/pages/user/profile.tsx'
 import { Settings } from '@/pages/user/settings'

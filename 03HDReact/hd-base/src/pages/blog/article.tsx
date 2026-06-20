@@ -11,8 +11,9 @@ import { UserAvatar } from '@/components/Avatar.tsx'
 import { ErrorCom } from '@/error/ErrorCom.tsx'
 import { useArticle } from '@/hooks/useArticle.tsx'
 import { FakerImage } from '@/components/FakerImage.tsx'
+import { Link } from '@tanstack/react-router'
 
-export function Front() {
+export function Article() {
   const { isLoading, error, data } = useArticle()
   if (isLoading) return 'loading...'
   if (error) return <ErrorCom error={error} />
@@ -56,11 +57,13 @@ function HoudunrenPage({ className, title, content, preview }: Props) {
     // 计算classname
     <Card className={classNames(className, 'bg-amber-500')}>
       <CardHeader>
-        <div className={classNames(className, 'flex items-center gap-4 border hover:bg-muted')}>
-          {/*随机头像*/}
-          <UserAvatar seed={title} />
-          <h2> {title}</h2>
-        </div>
+        <Link to="/font/article/$id">
+          <div className={classNames(className, 'flex items-center gap-4 border hover:bg-muted')}>
+            {/*随机头像*/}
+            <UserAvatar seed={title} />
+            <h2> {title}</h2>
+          </div>
+        </Link>
       </CardHeader>
       <CardContent>{content}</CardContent>
       <CardFooter className="overflow-hidden">

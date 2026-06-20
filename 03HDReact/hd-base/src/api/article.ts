@@ -2,8 +2,9 @@
 import request from '@/api/axios'
 import type { Article, CreateArticleDto, UpdateArticleDto } from '@/types/article'
 
-export function getArticle() {
-  return request.get<Article[]>('/article')
+export async function getArticle() {
+  const { data } = await request.get<Article[]>('/article')
+  return data
 }
 
 export function createArticle(data: CreateArticleDto) {
