@@ -20,11 +20,12 @@ export default function ArticleCard({ className, article }: Props) {
           <h2> {article.title}</h2>
         </div>
       </CardHeader>
-      <CardContent>{article.content}</CardContent>
-      <CardFooter className="overflow-hidden flex flex-col gap-2">
+      <CardContent>
+        {article.content}
+        {/*随机图片*/}
         <FakerImage />
-        {article.preview}
-      </CardFooter>
+      </CardContent>
+      <CardFooter className="overflow-hidden flex flex-col gap-2">{article.preview}</CardFooter>
     </Card>
   )
 }

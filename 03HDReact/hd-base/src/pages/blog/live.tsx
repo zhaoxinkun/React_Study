@@ -24,6 +24,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { useDeleteArticle } from '@/services/article.tsx'
 import type { Article } from '@/types/article.ts'
+import { FakerImage } from '@/components/FakerImage.tsx'
 
 export function Live() {
   const { isLoading, error, data } = useGetArticleList()
@@ -60,7 +61,9 @@ export function Live() {
                   </CardHeader>
 
                   <CardDescription>{article.content}</CardDescription>
-                  <CardFooter></CardFooter>
+                  <CardFooter>
+                    <FakerImage />
+                  </CardFooter>
                 </Card>
               )
             })}
@@ -81,9 +84,7 @@ function DelArticleButton({ article }: Props) {
     <>
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button className="basis-32" onClick={() => mutate(article.id)}>
-            Delete
-          </Button>
+          <Button className="basis-32">Delete</Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -92,7 +93,7 @@ function DelArticleButton({ article }: Props) {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
+            <AlertDialogAction onClick={() => mutate(article.id)}>Continue</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
