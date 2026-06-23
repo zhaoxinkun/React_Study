@@ -13,6 +13,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils.ts'
 import { useAddArticle } from '@/services/article.tsx'
 import type { CreateArticleDto } from '@/types/article.ts'
+import { ValidatorsError } from '@/components/validatorsError.tsx'
 
 export function AddArticle() {
   const Mutation = useAddArticle()
@@ -45,6 +46,14 @@ export function AddArticle() {
           <CardContent className="flex flex-col items-start border [&_input]:border">
             <form.Field
               name="title"
+              validators={{
+                onChange: ({ value }) => {
+                  if (value.length < 5) {
+                    return 'is not be ok'
+                  }
+                  return undefined
+                },
+              }}
               children={field => {
                 return (
                   <>
@@ -55,6 +64,7 @@ export function AddArticle() {
                       onBlur={field.handleBlur}
                       onChange={e => field.handleChange(e.target.value)}
                     />
+                    <ValidatorsError errors={field.state.meta.errors} />
                   </>
                 )
               }}
