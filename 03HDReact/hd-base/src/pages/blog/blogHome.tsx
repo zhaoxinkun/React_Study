@@ -7,6 +7,7 @@ import { useGetArticleList } from '../../hooks/useGetArticleList.tsx'
 import { ErrorCom } from '@/error/ErrorCom.tsx'
 import ArticleCard from '@/pages/blog/articleCard.tsx'
 import { Link } from '@tanstack/react-router'
+import { Button } from '@/components/ui/button'
 
 export default function BlogHome() {
   const { isLoading, error, data } = useGetArticleList()
@@ -15,9 +16,16 @@ export default function BlogHome() {
   return (
     <section className="container m-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>我的博客</CardTitle>
-          <CardDescription>希望我的博客可以给你带来启发</CardDescription>
+        <CardHeader className="flex justify-between align-items-center">
+          <div>
+            <CardTitle>我的博客</CardTitle>
+            <CardDescription>希望我的博客可以给你带来启发</CardDescription>
+          </div>
+          <div>
+            <Link to="/blog/addArticle">
+              <Button>添加文章</Button>
+            </Link>
+          </div>
         </CardHeader>
         <CardContent>
           {data?.map(article => {

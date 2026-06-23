@@ -6,6 +6,7 @@ import { Feature } from '@/pages/blog/feature.tsx'
 import { Live } from '@/pages/blog/live.tsx'
 import ArticleDetail from '@/pages/blog/articleDetail.tsx'
 import BlogHome from '@/pages/blog/blogHome.tsx'
+import { AddArticle } from '@/pages/blog/addArticle.tsx'
 
 // 创建blog路由
 const blogRootRoute = createRoute({
@@ -45,9 +46,17 @@ const liveRoute = createRoute({
   component: Live,
 })
 
+// 添加文章路由
+const addArticleRoute = createRoute({
+  getParentRoute: () => blogRootRoute,
+  path: 'addArticle',
+  component: AddArticle,
+})
+
 const blogRoute = blogRootRoute.addChildren([
   featureRoute,
   articleDetailRoute,
+  addArticleRoute,
   IndexRoute,
   liveRoute,
 ])

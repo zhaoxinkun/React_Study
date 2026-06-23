@@ -6,10 +6,12 @@ const style = new Style(lorelei)
 
 interface UserAvatarProps {
   seed: string
+  className?: string
+  handle?: () => void
 }
 
 // 随机头像组件
-export function UserAvatar({ seed }: UserAvatarProps) {
+export function UserAvatar({ seed, className, handle }: UserAvatarProps) {
   const avatar = useMemo(() => {
     return new Avatar(style, {
       seed,
@@ -17,5 +19,5 @@ export function UserAvatar({ seed }: UserAvatarProps) {
     }).toDataUri()
   }, [seed])
 
-  return <img src={avatar} alt={seed} className="size-16 rounded-full" />
+  return <img src={avatar} alt={seed} className={className} onClick={handle} />
 }

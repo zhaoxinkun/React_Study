@@ -1,3 +1,7 @@
+/**
+ * @desc 对于axios的封装处理
+ * */
+
 import axios, { type AxiosError } from 'axios'
 import { HttpError } from '@/config/HttpError.ts'
 import { message } from 'antd'
