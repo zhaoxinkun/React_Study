@@ -25,6 +25,7 @@ import { Button } from '@/components/ui/button'
 import { useDeleteArticle } from '@/services/article.tsx'
 import type { Article } from '@/types/article.ts'
 import { FakerImage } from '@/components/FakerImage.tsx'
+import { message } from 'antd'
 
 export function Live() {
   const { isLoading, error, data } = useGetArticleList()
@@ -83,7 +84,10 @@ function DelArticleButton({ article }: Props) {
   const delArticle = () => {
     delMutation.mutate(article.id, {
       onSuccess: () => {
-        console.log('success')
+        message.info({
+          content: '删除成功',
+          key: 'info',
+        })
       },
     })
   }
@@ -91,7 +95,10 @@ function DelArticleButton({ article }: Props) {
     <>
       <AlertDialog>
         <AlertDialogTrigger asChild>
-          <Button className="basis-32">Delete</Button>
+          <Button className="basis-32" disabled={!delMutation.isIdle}>
+            {!delMutation.isIdle && <span>删除中...</span>}
+            Delete
+          </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>
