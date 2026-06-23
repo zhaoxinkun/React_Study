@@ -79,7 +79,14 @@ interface Props {
 }
 
 function DelArticleButton({ article }: Props) {
-  const { mutate } = useDeleteArticle()
+  const delMutation = useDeleteArticle()
+  const delArticle = () => {
+    delMutation.mutate(article.id, {
+      onSuccess: () => {
+        console.log('success')
+      },
+    })
+  }
   return (
     <>
       <AlertDialog>
@@ -93,7 +100,7 @@ function DelArticleButton({ article }: Props) {
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={() => mutate(article.id)}>Continue</AlertDialogAction>
+            <AlertDialogAction onClick={delArticle}>Continue</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

@@ -1,18 +1,6 @@
 {
   "article": [
     {
-      "id": "JMV8TI6inD4",
-      "title": "title_{$randomInt}",
-      "content": "Sit et reiciendis beatae omnis repudiandae culpa ut illum.",
-      "preview": "/images/$randomInt.jpeg"
-    },
-    {
-      "id": "FLNcaopdcGE",
-      "title": "title_133",
-      "content": "Cum at nemo laborum esse accusamus et.",
-      "preview": "/images/271.jpeg"
-    },
-    {
       "id": "_LgEj7xrnKM",
       "title": "title_443",
       "content": "Magnam est tempore totam aliquam tenetur expedita facilis neque.",
