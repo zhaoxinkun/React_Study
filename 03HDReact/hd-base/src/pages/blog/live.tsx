@@ -1,5 +1,17 @@
-import { useGetArticleList } from '@/hooks/useGetArticleList.tsx'
-import { ErrorCom } from '@/error/ErrorCom.tsx'
+import { UserAvatar } from '@/components/Avatar.tsx'
+import { FakerImage } from '@/components/FakerImage.tsx'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -8,26 +20,15 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card.tsx'
-import { Link } from '@tanstack/react-router'
-import { UserAvatar } from '@/components/Avatar.tsx'
-import {
-  AlertDialog,
-  AlertDialogTrigger,
-  AlertDialogContent,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogCancel,
-  AlertDialogAction,
-} from '@/components/ui/alert-dialog'
-import { Button } from '@/components/ui/button'
+import { ErrorCom } from '@/error/ErrorCom.tsx'
+import { useGetArticleList } from '@/services/article.tsx'
 import { useDeleteArticle } from '@/services/article.tsx'
 import type { Article } from '@/types/article.ts'
-import { FakerImage } from '@/components/FakerImage.tsx'
+import { Link } from '@tanstack/react-router'
 import { message } from 'antd'
 
 export function Live() {
+  // 获取文章列表
   const { isLoading, error, data } = useGetArticleList()
   if (isLoading) return 'loading...'
   if (error) return <ErrorCom error={error} />
@@ -43,7 +44,7 @@ export function Live() {
             {data?.map(article => {
               return (
                 <Card className="flex  gap-4 border mb-4" key={article.id}>
-                  <CardHeader className="flex items-center justify-between gap-4 border hover:bg-amber-500">
+                  <CardHeader className="flex items-center justify-between gap-4 border h-15 hover:bg-amber-500">
                     <Link
                       // 跳转id的详情页
                       to="/blog/article/$id"
@@ -52,13 +53,19 @@ export function Live() {
                       }}
                       key={article.id}
                     >
-                      <div className="flex items-center">
-                        <UserAvatar seed={article.title} />
+                      <div className="flex items-center overflow-hidden">
+                        <UserAvatar seed={article.title} className="size-15" />
                         {article.title}
                       </div>
                     </Link>
-                    {/*删除组件*/}
-                    <DelArticleButton article={article} />
+                    <div>
+                      {/*删除组件*/}
+                      <DelArticleButton article={article} />
+                      {/*编辑组件*/}
+                      <Link to="/blog/editArticle/$id" params={{ id: article.id }}>
+                        <Button>Edit</Button>
+                      </Link>
+                    </div>
                   </CardHeader>
 
                   <CardDescription>{article.content}</CardDescription>

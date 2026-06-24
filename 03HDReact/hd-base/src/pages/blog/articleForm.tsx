@@ -11,12 +11,15 @@ import { Button } from '@/components/ui/button'
 import { UserAvatar } from '@/components/Avatar.tsx'
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils.ts'
-import { useAddArticle } from '@/services/article.tsx'
-import type { CreateArticleDto } from '@/types/article.ts'
+import { useAddArticle, useGetArticleDetail, useUpdateArticle } from '@/services/article.tsx'
 import { ValidatorsError } from '@/components/validatorsError.tsx'
+import { useEffect } from 'react'
 
-export function AddArticle() {
-  const Mutation = useAddArticle()
+export function ArticleForm({ articleId }: { articleId?: string }) {
+  const articleQuery = useGetArticleDetail(String(articleId ?? ''))
+  const addMutation = useAddArticle()
+  const updateMutation = useUpdateArticle()
+
   const form = useForm({
     defaultValues: {
       title: '',
@@ -25,10 +28,30 @@ export function AddArticle() {
     },
     onSubmit: async ({ value }) => {
       // Do something with form data
-      console.log(value)
-      Mutation.mutate(value as CreateArticleDto)
+      if (articleId) {
+        updateMutation.mutate({
+          id: articleId!,
+          data: value,
+        })
+      } else {
+        addMutation.mutate(value)
+      }
+      // Mutation.mutate(value as CreateArticleDto)
     },
   })
+
+  useEffect(() => {
+    if (!articleQuery.data) return
+
+    form.reset({
+      title: articleQuery.data.title,
+
+      content: articleQuery.data.content,
+
+      preview: articleQuery.data.preview,
+    })
+  }, [articleQuery.data])
+
   return (
     <>
       <form
@@ -40,7 +63,7 @@ export function AddArticle() {
       >
         <Card>
           <CardHeader>
-            <CardTitle>添加文章</CardTitle>
+            <CardTitle>{articleId ? '编辑文章' : '创建文章'}</CardTitle>
             <CardDescription>请添加正能量的内容</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col items-start border [&_input]:border">
@@ -60,7 +83,7 @@ export function AddArticle() {
                     <label htmlFor="title">Title :</label>
                     <input
                       name="title"
-                      value={field.state.value}
+                      value={field.state.value ?? ''}
                       onBlur={field.handleBlur}
                       onChange={e => field.handleChange(e.target.value)}
                     />
@@ -77,7 +100,7 @@ export function AddArticle() {
                     <label aria-label="content">Content :</label>
                     <Textarea
                       aria-label="content"
-                      value={field.state.value}
+                      value={field.state.value ?? ''}
                       onChange={e => field.handleChange(e.target.value)}
                     />
                   </>

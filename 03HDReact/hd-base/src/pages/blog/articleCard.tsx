@@ -16,7 +16,7 @@ export default function ArticleCard({ className, article }: Props) {
       <CardHeader>
         <div className={cn(className, 'flex items-center gap-4 border hover:bg-muted')}>
           {/*随机头像*/}
-          <UserAvatar seed={article.title} />
+          <UserAvatar seed={article.title} className="size-15" />
           <h2> {article.title}</h2>
         </div>
       </CardHeader>

@@ -1,4 +1,6 @@
 // 创建博客页面路由
+import { CreateArticlePage } from '@/pages/blog/createArticlePage.tsx'
+import { EditArticlePage } from '@/pages/blog/editArticlePage.tsx'
 import { createRoute } from '@tanstack/react-router'
 import rootRoute from '@/routes/_root.tsx'
 import { BlogLayout } from '@/pages/blog/blogLayout.tsx'
@@ -6,7 +8,6 @@ import { Feature } from '@/pages/blog/feature.tsx'
 import { Live } from '@/pages/blog/live.tsx'
 import ArticleDetail from '@/pages/blog/articleDetail.tsx'
 import BlogHome from '@/pages/blog/blogHome.tsx'
-import { AddArticle } from '@/pages/blog/addArticle.tsx'
 
 // 创建blog路由
 const blogRootRoute = createRoute({
@@ -46,17 +47,25 @@ const liveRoute = createRoute({
   component: Live,
 })
 
-// 添加文章路由
+// 创建文章路由
 const addArticleRoute = createRoute({
   getParentRoute: () => blogRootRoute,
-  path: 'addArticle',
-  component: AddArticle,
+  path: 'createArticle',
+  component: CreateArticlePage,
+})
+
+// 编辑文章路由
+const editArticleRoute = createRoute({
+  getParentRoute: () => blogRootRoute,
+  path: 'editArticle/$id',
+  component: EditArticlePage,
 })
 
 const blogRoute = blogRootRoute.addChildren([
   featureRoute,
   articleDetailRoute,
   addArticleRoute,
+  editArticleRoute,
   IndexRoute,
   liveRoute,
 ])

@@ -3,7 +3,7 @@
  *
  */
 import { articleDetailRoute } from '@/routes/blog/blog.tsx'
-import { useGetArticleDetail } from '@/hooks/useGetArticleDetail.tsx'
+import { useGetArticleDetail } from '@/services/article.tsx'
 import { Loading } from '@/components/loading.tsx'
 import { ErrorCom } from '@/error/ErrorCom'
 
