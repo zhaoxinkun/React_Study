@@ -1,0 +1,22 @@
+.login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("@/assets/img/bg.jpg") center center/cover no-repeat;
+}
+
+.login-panel {
+  width: 600px;
+  height: 300px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.login-form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+}
