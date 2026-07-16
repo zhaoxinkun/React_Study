@@ -9,7 +9,8 @@ export default function OrderId() {
   console.log("🚀 ~ OrderId ~ params: ", params);
   return (
     <>
-      this is OrderId page `${params.id}`
+      <h1>this is OrderId page</h1>
+      <p>{params.id}</p>
     </>
   );
 }

@@ -1,8 +1,9 @@
+import {RouterProvider} from "react-router";
+import {router} from "./router/router2.tsx";
+
 function App() {
   return (
-    <>
-      <h1>Hello react</h1>
-    </>
+    <RouterProvider router={router}></RouterProvider>
   );
 }
 
