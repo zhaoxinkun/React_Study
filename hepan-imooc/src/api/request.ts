@@ -1,5 +1,6 @@
 import {message} from "antd";
 import axios from "axios"
+import {hideGlobalLoading, showGlobalLoading} from "../services/loadingService.ts";
 import {tokenApi} from "../utils/token.ts";
 
 const request = axios.create({
@@ -9,12 +10,32 @@ const request = axios.create({
   withCredentials: true
 })
 
+
+let pendingRequestCount = 0
+
+function startLoading() {
+  pendingRequestCount += 1
+
+  if (pendingRequestCount === 1) {
+    showGlobalLoading()
+  }
+}
+
+function stopLoading() {
+  pendingRequestCount = Math.max(pendingRequestCount - 1, 0)
+
+  if (pendingRequestCount === 0) {
+    hideGlobalLoading()
+  }
+}
+
 // Add a request interceptor
 request.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     // 获取token
     const token = tokenApi.getToken();
+    startLoading()
     if (typeof token === 'string' && token.trim()) {
       config.headers.set(
         'Authorization',
@@ -25,6 +46,7 @@ request.interceptors.request.use(
   },
   function (error) {
     // Do something with request error
+    stopLoading()
     return Promise.reject(error);
   }
 );
@@ -43,11 +65,13 @@ request.interceptors.response.use(
       message.error(data.msg, 1000)
       return Promise.reject(data.msg)
     }
-    return response;
+    stopLoading()
+    return response.data;
   },
   function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
+    stopLoading()
     return Promise.reject(error);
   }
 );

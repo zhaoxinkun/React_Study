@@ -1,7 +1,7 @@
 // 关于token
 
 export const tokenApi = {
-  setToken: (token: string) => localStorage.setItem("token", token),
-  getToken: () => localStorage.getItem("token"),
-  removeToken: () => localStorage.removeItem("token")
+  setToken: (key: string, value: object) => localStorage.setItem(key, JSON.stringify(value)),
+  getToken: (key: string) => localStorage.getItem(key),
+  removeToken: (key: string) => localStorage.removeItem(key)
 }

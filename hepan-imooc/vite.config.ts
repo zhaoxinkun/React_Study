@@ -6,6 +6,7 @@ import * as path from "node:path";
 // https://vite.dev/config/
 export default defineConfig({
   server: {
+    host: "localhost",
     proxy: {
       "/api": {
         target: "http://api-driver.marsview.cc",

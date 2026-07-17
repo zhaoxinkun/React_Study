@@ -1,20 +1,20 @@
 import request from "./request.ts";
 
 const http = {
-  get: (url: string, params?: unknown) => {
+  get<T>(url: string, params?: object): Promise<T> {
     return request.get(url, {params});
   },
-  post: (url: string, data: unknown) => {
+  post<T>(url: string, data?: unknown): Promise<T> {
     return request.post(url, data);
   },
 
-  put: (url: string, data: unknown) => {
+  put(url: string, data: unknown) {
     return request.put(url, data);
   },
-  delete: (url: string) => {
+  delete(url: string) {
     return request.delete(url);
   },
-  patch: (url: string, data: unknown) => {
+  patch(url: string, data: unknown) {
     return request.patch(url, data);
   },
 }
