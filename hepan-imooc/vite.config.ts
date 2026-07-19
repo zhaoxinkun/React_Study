@@ -10,9 +10,11 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "http://api-driver.marsview.cc",
-        rewrite: (path) => {
-          return path.replace(/^\/api/, "")
-        }
+        changeOrigin: true,
+        // rewrite: (path) => {
+        //   return path.replace(/^\/api/, "")
+        // },
+
       }
     }
   },

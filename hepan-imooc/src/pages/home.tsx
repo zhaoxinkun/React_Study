@@ -1,13 +1,18 @@
 import {useEffect} from "react";
 import {useNavigate} from "react-router";
 import {login} from "../api/api.ts";
+import {tokenApi} from "../utils/token.ts";
 
 export default function Home() {
   console.log("Home render")
   useEffect(() => {
     login({
-      id: 1234
+      username: "akin",
+      password: "123456",
     }).then(res => console.log(res))
+    tokenApi.setToken("token", {
+      value: 'zhaoxinkun'
+    })
   }, [])
   const navigate = useNavigate()
   const handleClick = () => {

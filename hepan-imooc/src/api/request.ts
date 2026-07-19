@@ -3,8 +3,10 @@ import axios from "axios"
 import {hideGlobalLoading, showGlobalLoading} from "../services/loadingService.ts";
 import {tokenApi} from "../utils/token.ts";
 
+const isMock = import.meta.env.VITE_MOCK === 'true'
+
 const request = axios.create({
-  baseURL: "/api",
+  baseURL: isMock?import.meta.env.VITE_MOCK_API:import.meta.env.VITE_BASE_API,
   timeout: 5000,
   timeoutErrorMessage: "request timeout",
   withCredentials: true
@@ -34,7 +36,7 @@ request.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     // 获取token
-    const token = tokenApi.getToken();
+    const token = tokenApi.getToken('token');
     startLoading()
     if (typeof token === 'string' && token.trim()) {
       config.headers.set(
@@ -42,6 +44,12 @@ request.interceptors.request.use(
         `Bearer ${token.trim()}`,
       )
     }
+
+    // if (isMock) {
+    //   config.baseURL = ;
+    // } else {
+    //   config.baseURL = ;
+    // }
     return config
   },
   function (error) {
@@ -59,7 +67,7 @@ request.interceptors.response.use(
     const data = response.data;
     if (data.code == 50001) {
       message.error(data.msg, 1000)
-      tokenApi.removeToken()
+      tokenApi.removeToken('token')
       location.href = "/login";
     } else if (data.code != 0) {
       message.error(data.msg, 1000)

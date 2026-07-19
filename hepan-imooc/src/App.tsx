@@ -5,6 +5,9 @@ import LoadingBridge from "./components/GlobalLoading/LoadingBridge.tsx";
 import {useLoading} from "./context/LoadingContext.tsx";
 import {router} from "./router/router2.tsx";
 
+
+console.log(import.meta.env, "import.meta.env.BASE_URL")
+
 function App() {
 
   const {showLoading, hideLoading} = useLoading();
