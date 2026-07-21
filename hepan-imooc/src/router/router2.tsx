@@ -1,5 +1,6 @@
 import {createBrowserRouter, Navigate} from "react-router";
 import Error404 from "../pages/404.tsx";
+import Login from "../pages/Login/login.tsx";
 import OrderLoader from "../pages/Order/orederLoader.tsx";
 import Home from "../pages/home.tsx";
 import Order from "../pages/Order/order.tsx";
@@ -8,10 +9,15 @@ import Profile from "../pages/profile.tsx";
 import ProfileId from "../pages/profileId.tsx";
 import Welcome from "../pages/welcome.tsx";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Welcome/>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
   },
   {
     path: "/home",

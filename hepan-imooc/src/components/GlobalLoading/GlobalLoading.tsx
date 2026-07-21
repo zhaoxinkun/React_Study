@@ -1,6 +1,6 @@
 import {Spin} from "antd";
 import "./global-loading.scss"
-import {useLoading} from "../../context/LoadingContext.tsx";
+import {useLoading} from "../../hooks/useLoading.ts";
 
 // 这里是loading的组件
 

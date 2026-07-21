@@ -2,9 +2,13 @@ import {useEffect} from "react";
 import {useNavigate} from "react-router";
 import {login} from "../api/api.ts";
 import {tokenApi} from "../utils/token.ts";
+import config from "../config";
+import {formatDate} from "../utils"
 
 export default function Home() {
   console.log("Home render")
+  console.log("config", config)
+  console.log("formatDate", formatDate())
   useEffect(() => {
     login({
       username: "akin",

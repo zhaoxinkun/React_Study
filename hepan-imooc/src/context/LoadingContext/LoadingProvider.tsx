@@ -1,15 +1,5 @@
-// 创建一个Loading的context
-import {createContext, type ReactNode, useCallback, useContext, useMemo, useState} from "react";
-
-interface LoadingContextValue {
-  loading: boolean
-  showLoading: () => void
-  hideLoading: () => void
-}
-
-// 创建一个loading context
-const LoadingContext = createContext<LoadingContextValue | null>(null)
-
+import {type ReactNode, useCallback, useMemo, useState} from "react";
+import {LoadingContext} from "./LoadingContext";
 
 interface LoadingProviderProps {
   children: ReactNode
@@ -37,14 +27,4 @@ export function LoadingProvider({children}: LoadingProviderProps) {
       {children}
     </LoadingContext.Provider>
   )
-}
-
-export function useLoading() {
-  const context = useContext(LoadingContext)
-
-  if (!context) {
-    throw new Error('useLoading 必须在 LoadingProvider 内部使用')
-  }
-
-  return context
 }

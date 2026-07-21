@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import {useLoading} from '../../context/LoadingContext'
+import {useLoading} from '../../hooks/useLoading.ts'
 import {
   registerLoadingHandler,
   unregisterLoadingHandler,

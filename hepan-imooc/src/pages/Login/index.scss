@@ -1,0 +1,27 @@
+.login {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background: url("../../assets/image/login_bg.jpeg") no-repeat right center;
+  position: relative;
+
+  .login-warrper {
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: red;
+    position: absolute;
+    right: 10%;
+    top: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      text-align: center;
+      margin: 20px 0;
+      background-color: blue;
+    }
+  }
+}

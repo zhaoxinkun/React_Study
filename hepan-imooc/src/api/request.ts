@@ -68,7 +68,7 @@ request.interceptors.response.use(
     if (data.code == 50001) {
       message.error(data.msg, 1000)
       tokenApi.removeToken('token')
-      location.href = "/login";
+      location.href = "/Login";
     } else if (data.code != 0) {
       message.error(data.msg, 1000)
       return Promise.reject(data.msg)
