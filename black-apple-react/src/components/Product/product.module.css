@@ -1,0 +1,15 @@
+/*驼峰方式*/
+.productTextContainer {
+    position: absolute;
+    top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-top: 2rem;
+    color: white;
+    font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+}
+
+/*连字符方式*/
+.product-title {
+    font-size: 2rem;
+    font-weight: 700;
+}

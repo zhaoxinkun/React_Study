@@ -1,11 +1,15 @@
 import {useEffect} from "react";
+import {Button} from "antd";
 import {useNavigate} from "react-router";
-import {login} from "../api/api.ts";
+import {login} from "../api";
 import {tokenApi} from "../utils/token.ts";
 import config from "../config";
 import {formatDate} from "../utils"
+import {useThemeMode} from "../context/ThemeContext";
 
 export default function Home() {
+  const {themeMode, toggleTheme} = useThemeMode();
+
   console.log("Home render")
   console.log("config", config)
   console.log("formatDate", formatDate())
@@ -26,6 +30,11 @@ export default function Home() {
   return (
     <>
       <h2> this is home page</h2>
+      <Button type="primary" onClick={toggleTheme}>
+        切换到{themeMode === "light" ? "暗黑" : "明亮"}主题
+      </Button>
+      <br/>
+      <br/>
       <button onClick={handleClick}> 点击跳转去profile页面</button>
     </>
   );

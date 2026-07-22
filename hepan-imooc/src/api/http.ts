@@ -1,3 +1,5 @@
+// 封装Http请求
+
 import request from "./request.ts";
 
 const http = {

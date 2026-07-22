@@ -1,12 +1,15 @@
+// 封装 Axios
 import {message} from "antd";
 import axios from "axios"
 import {hideGlobalLoading, showGlobalLoading} from "../services/loadingService.ts";
 import {tokenApi} from "../utils/token.ts";
 
 const isMock = import.meta.env.VITE_MOCK === 'true'
+console.log("🚀 ~  ~ isMock: ", isMock);
+console.log("vite_api", import.meta.env.VITE_BASE_API);
 
 const request = axios.create({
-  baseURL: isMock?import.meta.env.VITE_MOCK_API:import.meta.env.VITE_BASE_API,
+  baseURL: isMock ? import.meta.env.VITE_MOCK_API : import.meta.env.VITE_BASE_API,
   timeout: 5000,
   timeoutErrorMessage: "request timeout",
   withCredentials: true
@@ -44,12 +47,6 @@ request.interceptors.request.use(
         `Bearer ${token.trim()}`,
       )
     }
-
-    // if (isMock) {
-    //   config.baseURL = ;
-    // } else {
-    //   config.baseURL = ;
-    // }
     return config
   },
   function (error) {

@@ -13,6 +13,21 @@ body,
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
+.app-shell {
+  height: 100%;
+  min-height: 100%;
+  color: #111827;
+  background: #f7f9fb;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
 }
+
+.app-shell-dark {
+  color: rgb(255 255 255 / 88%);
+  background: #141414;
+}
+
+/*body {*/
+/*  overflow: hidden;*/
+/*}*/
